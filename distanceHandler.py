@@ -1,7 +1,7 @@
 import time
 import Adafruit_ADS1x15
 
-class ADS1115Reader:
+class Distance:
     def __init__(self, address=0x48, gain=1, busnum=1):
         self.address = address
         self.gain = gain
@@ -15,12 +15,12 @@ class ADS1115Reader:
         voltage = adc_value * (4.096 / 32767.0)
         return voltage
 
-if __name__ == "__main__":
-    # Create an instance of ADS1115Reader
-    ads_reader = ADS1115Reader()
+# if __name__ == "__main__":
+#     # Create an instance of ADS1115Reader
+#     ads_reader = Distance()
     
-    while True:
-        # Read voltage from channel 0
-        voltage = ads_reader.read_voltage(0)
-        print(f"Voltage: {voltage:.4f} V")
-        time.sleep(1)
+#     while True:
+#         # Read voltage from channel 0
+#         voltage = ads_reader.read_voltage(0)
+#         print(f"Voltage: {voltage:.4f} V")
+#         time.sleep(1)
