@@ -2,10 +2,11 @@ import time
 import Adafruit_ADS1x15
 
 class ADS1115Reader:
-    def __init__(self, address=0x48, gain=1):
+    def __init__(self, address=0x48, gain=1, busnum=1):
         self.address = address
         self.gain = gain
-        self.adc = Adafruit_ADS1x15.ADS1115(address)
+        self.busnum = busnum
+        self.adc = Adafruit_ADS1x15.ADS1115(address, busnum=busnum)
     
     def read_voltage(self, channel):
         # Read ADC value from the specified channel (0-3)
