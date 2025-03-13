@@ -15,7 +15,7 @@ class motor:
         GPIO.output(backwardPin, GPIO.LOW)
 
         self.pwm = GPIO.PWM(pwmPin, 1000)
-        # pwm.start(0)
+        self.pwm.start(0)
 
     def drive(self, speed, direction=0):
         if speed == 0:
