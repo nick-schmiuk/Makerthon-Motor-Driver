@@ -8,12 +8,15 @@ class Distance:
         self.busnum = busnum
         self.adc = Adafruit_ADS1x15.ADS1115(address, busnum=busnum)
     
-    def read_voltage(self, channel):
+    def getAvoidance(self, channel, distanceThreshhold):
         # Read ADC value from the specified channel (0-3)
         adc_value = self.adc.read_adc(channel, gain=self.gain)
         # Convert the ADC value to voltage
         voltage = adc_value * (4.096 / 32767.0)
-        return voltage
+        if distanceThreshhold <= voltage:
+            return False
+        elif distanceThreshhold >= voltage:
+            return True
 
 # if __name__ == "__main__":
 #     # Create an instance of ADS1115Reader
