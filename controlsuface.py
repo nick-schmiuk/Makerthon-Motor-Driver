@@ -7,29 +7,29 @@ motorL = motorHandler.motor(32, 8, 10)
 motorR = motorHandler.motor(33, 18, 16)
 
 def forwards():
-    motorL.drive(70, 1)
-    motorR.drive(70, 1)
-    sleep(1)
-    motorL.drive(0)
-    motorR.drive(0)
-
-def backwards():
     motorL.drive(70, -1)
     motorR.drive(70, -1)
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
 
+def backwards():
+    motorL.drive(70, 1)
+    motorR.drive(70, 1)
+    sleep(1)
+    motorL.drive(0)
+    motorR.drive(0)
+
 def left():
-    motorR.drive(50, 1)
-    motorL.drive(50, -1)
+    motorR.drive(70, 1)
+    motorL.drive(70, -1)
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
 
 def right():
-    motorL.drive(50, 1)
-    motorR.drive(50, -1)
+    motorL.drive(70, 1)
+    motorR.drive(70, -1)
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
