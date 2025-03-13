@@ -13,9 +13,10 @@ class Distance:
         adc_value = self.adc.read_adc(channel, gain=self.gain)
         # Convert the ADC value to voltage
         voltage = adc_value * (4.096 / 32767.0)
-        if distanceThreshhold <= voltage:
+        print(f"Voltage Channel {channel}: {voltage}")
+        if distanceThreshhold >= voltage:
             return False
-        elif distanceThreshhold >= voltage:
+        elif distanceThreshhold <= voltage:
             return True
 
 # if __name__ == "__main__":

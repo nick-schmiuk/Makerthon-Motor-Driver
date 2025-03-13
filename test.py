@@ -1,5 +1,7 @@
-import motorHandler
+import distanceHandler
 
-motorL = motorHandler.motor(12, 14, 15)
+distance = distanceHandler.Distance()
 
-motorL.drive(50, 1)
+while True:
+    print(f"Senor 1: {distance.getAvoidance(0, 2.5)}")
+    print(f"Senor 2: {distance.getAvoidance(1, 2.5)}")
