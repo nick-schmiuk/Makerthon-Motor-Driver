@@ -79,5 +79,6 @@ fwd.grid(row=1,column=2)
 lft.grid(row=2, column=1)
 rgt.grid(row=2, column=3)
 bwd.grid(row=3, column=2)
+startAvoidancedrive.grid(row=4, column=1)
 
 window.mainloop()
