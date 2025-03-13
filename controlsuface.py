@@ -4,7 +4,7 @@ from time import sleep
 
 window = tkinter.Tk()
 motorL = motorHandler.motor(32, 8, 10)
-motorR = motorHandler.motor(33, 16, 18)
+motorR = motorHandler.motor(33, 18, 16)
 
 def forwards():
     motorL.drive(70, 1)
