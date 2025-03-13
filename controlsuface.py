@@ -36,7 +36,6 @@ def right():
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
-
 def halt():
     motorL.drive(0)
     motorR.drive(0)
@@ -45,21 +44,21 @@ def driveAndAvoid():
     while True:
         motorL.drive(70, -1)
         motorR.drive(70, -1)
-        if distance.getAvoidance(0, 0.5) == True: # Left channel
+        if distance.getAvoidance(0, 2.5) == True: # Left channel
             halt()
             motorL.drive(70, -1)
             motorR.drive(70, 1)
-            while distance.getAvoidance(0, 0.5) == True:
+            while distance.getAvoidance(0, 2.5) == True:
                 sleep(0.1)
             halt()
             motorL.drive(70, -1)
             motorR.drive(70, -1)
         
-        if distance.getAvoidance(1, 0.5) == True: # Left channel
+        if distance.getAvoidance(1, 2.5) == True: # Left channel
             halt()
             motorL.drive(70, 1)
             motorR.drive(70, -1)
-            while distance.getAvoidance(1, 0.5) == True:
+            while distance.getAvoidance(1, 2.5) == True:
                 sleep(0.1)
             halt()
             motorL.drive(70, -1)
