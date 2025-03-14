@@ -10,6 +10,7 @@ def main():
     picam2 = Picamera2()
     config = picam2.create_preview_configuration(main={"size": (1296, 972)}, sensor={"output_size": (1296, 972)})
     picam2.configure(config)
+    picam2.start_preview()
     picam2.start()
 
     # Allow the camera to warm up
