@@ -8,11 +8,11 @@ class MainHandler:
 
     def left(self):
         self.motorR.drive(100, 1)
-        self.motorL.drive(50, -1)
+        #self.motorL.drive(50, -1)
 
     def right(self):
         self.motorL.drive(100, 1)
-        self.motorR.drive(50, -1)
+        #self.motorR.drive(50, -1)
 
     def driveAndAvoid(self, forwardspeed):
         while True:
