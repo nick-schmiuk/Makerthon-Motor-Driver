@@ -6,11 +6,11 @@ class MainHandler:
         self.motorR = motorR
         self.distance = distance
 
-    def left(self):
+    def right(self):
         self.motorR.drive(100, 1)
         #self.motorL.drive(50, -1)
 
-    def right(self):
+    def left(self):
         self.motorL.drive(100, 1)
         #self.motorR.drive(50, -1)
 
@@ -22,8 +22,8 @@ class MainHandler:
                 print("Detected Obstacle on the Left")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
-                self.motorL.drive(70, -1)
-                #self.motorR.drive(50, 1)
+                self.motorL.drive(100, -1)
+                self.motorR.drive(30, 1)
                 while self.distance.getAvoidance(0, 1.5) == True:
                     sleep(0.3)
                 self.motorL.drive(0)
@@ -35,8 +35,8 @@ class MainHandler:
                 print("Detected Obstacle on the Left")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
-                #self.motorL.drive(50, 1)
-                self.motorR.drive(70, -1)
+                self.motorL.drive(30, 1)
+                self.motorR.drive(100, -1)
                 while self.distance.getAvoidance(1, 1.5) == True:
                     sleep(0.3)
                 self.motorL.drive(0)
