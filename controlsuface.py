@@ -11,29 +11,29 @@ distance = distanceHandler.Distance()
 action = actionHandler.MainHandler(motorL=motorL, motorR=motorR, distance=distance)
 
 def forwards():
-    motorL.drive(70, -1)
-    motorR.drive(70, -1)
+    motorL.drive(100, -1)
+    motorR.drive(100, -1)
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
 
 def backwards():
-    motorL.drive(70, 1)
-    motorR.drive(70, 1)
+    motorL.drive(100, 1)
+    motorR.drive(100, 1)
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
 
 def left():
-    motorR.drive(70, 1)
-    motorL.drive(70, -1)
+    motorR.drive(100, 1)
+    motorL.drive(100, -1)
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
 
 def right():
-    motorL.drive(70, 1)
-    motorR.drive(70, -1)
+    motorL.drive(100, 1)
+    motorR.drive(100, -1)
     sleep(1)
     motorL.drive(0)
     motorR.drive(0)
