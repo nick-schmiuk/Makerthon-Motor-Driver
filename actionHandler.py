@@ -18,26 +18,26 @@ class MainHandler:
         while True:
             self.motorL.drive(forwardspeed, -1)
             self.motorR.drive(forwardspeed, -1)
-            if self.distance.getAvoidance(0, 2.5) == True: # Left channel
+            if self.distance.getAvoidance(0, 1.5) == True: # Left channel
                 print("Detected Obstacle on the Left")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
                 self.motorL.drive(70, -1)
                 #self.motorR.drive(50, 1)
-                while self.distance.getAvoidance(0, 2.5) == True:
+                while self.distance.getAvoidance(0, 1.5) == True:
                     sleep(0.3)
                 self.motorL.drive(0)
                 self.motorR.drive(0)
                 self.motorL.drive(forwardspeed, -1)
                 self.motorR.drive(forwardspeed, -1)
             
-            if self.distance.getAvoidance(1, 2.5) == True: # Right channel
+            if self.distance.getAvoidance(1, 1.5) == True: # Right channel
                 print("Detected Obstacle on the Left")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
                 #self.motorL.drive(50, 1)
                 self.motorR.drive(70, -1)
-                while self.distance.getAvoidance(1, 2.5) == True:
+                while self.distance.getAvoidance(1, 1.5) == True:
                     sleep(0.3)
                 self.motorL.drive(0)
                 self.motorR.drive(0)
