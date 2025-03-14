@@ -1,6 +1,10 @@
 import RPi.GPIO as GPIO
 from time import sleep
 
+def eStop():
+    GPIO.cleanup()
+    exit()
+    
 class motor:
     def __init__(self, pwmPin, forwardPin, backwardPin):
         self.forwardPin = forwardPin

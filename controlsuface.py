@@ -44,7 +44,7 @@ def halt():
 
 
 def simpleAvoidanceDrive():
-    action.driveAndAvoid(forwardspeed=20)
+    action.driveAndAvoid(forwardspeed=35)
     
 fwd = tkinter.Button(window, text="↑",command=forwards)
 bwd = tkinter.Button(window, text="↓", command=backwards)
@@ -59,4 +59,7 @@ rgt.grid(row=2, column=3)
 bwd.grid(row=3, column=2)
 startAvoidancedrive.grid(row=4, column=1)
 
-window.mainloop()
+try:
+    window.mainloop()
+except KeyboardInterrupt:
+    motorHandler.eStop()
