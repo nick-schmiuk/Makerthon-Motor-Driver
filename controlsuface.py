@@ -44,7 +44,7 @@ def halt():
 
 
 def simpleAvoidanceDrive():
-    action.driveAndAvoid(forwardspeed=100)
+    action.driveAndAvoid(forwardspeed=50)
     
 fwd = tkinter.Button(window, text="↑",command=forwards)
 bwd = tkinter.Button(window, text="↓", command=backwards)
