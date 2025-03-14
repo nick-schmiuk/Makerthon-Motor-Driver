@@ -1,15 +1,18 @@
 import cv2
 import numpy as np
 from picamera2 import Picamera2
-from picamera2.encoders import JpegEncoder
-from picamera2.outputs import FileOutput
+from picamera2.configurations import PreviewConfiguration
 import time
 
 def main():
     # Initialize the camera
     picam2 = Picamera2()
-    config = picam2.create_preview_configuration(main={"size": (640, 480)})
-    picam2.configure(config)
+
+    # Configure the preview settings
+    preview_config = PreviewConfiguration(main={"size": (640, 480)})
+    picam2.configure(preview_config)
+
+    # Start the camera
     picam2.start()
 
     # Allow the camera to warm up
