@@ -1,26 +1,25 @@
 import cv2
 import numpy as np
-from picamera2 import Picamera2
-from picamera2.encoders import JpegEncoder
-from picamera2.outputs import FileOutput
+from picamera.array import PiRGBArray
+from picamera import PiCamera
 import time
 
 def main():
     # Initialize the camera
-    picam2 = Picamera2()
-    config = picam2.create_preview_configuration(main={"size": (640, 480)})
-    picam2.configure(config)
-    picam2.start()
+    camera = PiCamera()
+    camera.resolution = (640, 480)
+    camera.framerate = 32
+    rawCapture = PiRGBArray(camera, size=(640, 480))
 
     # Allow the camera to warm up
-    time.sleep(2)
+    time.sleep(0.1)
 
-    while True:
-        # Capture a frame
-        array = picam2.capture_array("main")
+    for frame in camera.capture_continuous(rawCapture, format="bgr", use_video_port=True):
+        # Grab the raw NumPy array representing the image
+        image = frame.array
 
         # Convert the frame to the HSV color space
-        hsv_frame = cv2.cvtColor(array, cv2.COLOR_BGR2HSV)
+        hsv_frame = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
         # Define the lower and upper bounds for the color (e.g., red)
         lower_red1 = np.array([0, 120, 70], dtype=np.uint8)
@@ -47,17 +46,19 @@ def main():
             # Get the bounding box coordinates
             x, y, w, h = cv2.boundingRect(contour)
             # Draw the bounding box on the frame
-            cv2.rectangle(array, (x, y), (x + w, y + h), (0, 255, 0), 2)
+            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
         # Display the original frame with bounding boxes
-        cv2.imshow("Original Frame", array)
+        cv2.imshow("Original Frame", image)
+
+        # Clear the stream in preparation for the next frame
+        rawCapture.truncate(0)
 
         # Break the loop if 'q' key is pressed
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
     # Release the camera and close all OpenCV windows
-    picam2.stop()
     cv2.destroyAllWindows()
 
 if __name__ == "__main__":
