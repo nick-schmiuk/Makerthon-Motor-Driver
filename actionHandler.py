@@ -24,7 +24,7 @@ class MainHandler:
                 self.motorR.drive(0)
                 self.motorL.drive(100, -1)
                 self.motorR.drive(50, 1)
-                while distance.getAvoidance(0, 2.5) == True:
+                while self.distance.getAvoidance(0, 2.5) == True:
                     sleep(0.3)
                 self.motorL.drive(0)
                 self.motorR.drive(0)
