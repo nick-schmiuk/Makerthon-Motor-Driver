@@ -12,7 +12,7 @@ def detectGarbage(picam2):
     #cv2.flip(picam2, 1)
     frame = picam2.capture_array()
     frame = cv2.resize(frame, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
-    frame = cv2.flip(frame, 1)
+    frame = cv2.flip(frame, 0)
 
     cv2.imshow('C',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
