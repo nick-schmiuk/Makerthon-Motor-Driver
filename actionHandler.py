@@ -74,16 +74,16 @@ class MainHandler:
                 print("DETECT - GOING RIGHT")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
-                self.motorL.drive(70, -1)
-                self.motorR.drive(70, 1)
+                self.motorL.drive(50, -1)
+                self.motorR.drive(40, 1)
                 value = detectGarbage(picam2)
                 continue
             if value == -1:
                 print("DETECT - GOING LEFT")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
-                self.motorL.drive(70, 1)
-                self.motorR.drive(70, -1)
+                self.motorL.drive(40, 1)
+                self.motorR.drive(50, -1)
                 value = detectGarbage(picam2)
                 continue
             if value == 0:
