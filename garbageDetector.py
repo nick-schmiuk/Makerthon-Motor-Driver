@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-from matplotlib import pyplot as plt
 from picamera2 import Picamera2
 import numpy as np
 
