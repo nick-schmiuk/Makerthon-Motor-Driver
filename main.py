@@ -15,8 +15,9 @@ picam2 = Picamera2()
 picam2.configure(picam2.create_still_configuration(main={"format": "RGB888", "size": (640, 480)}))
 
 # Iniciar la cámara
-picam2.start()
-#picam2.start_preview()
+#picam2.start()
+picam2.set_controls({"HorizontalFlip": True})
+picam2.start_preview()
 time.sleep(2)
 
 handler = actionHandler.MainHandler(motorL=motorL, motorR=motorR, distance=distance)
