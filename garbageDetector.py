@@ -3,7 +3,7 @@ import cv2
 from picamera2 import Picamera2
 import numpy as np
 
-tolerance = 15
+tolerance = 30
 
 def detectGarbage(picam2):
 
