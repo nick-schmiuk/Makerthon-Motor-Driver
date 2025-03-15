@@ -71,6 +71,7 @@ class MainHandler:
 
         while True:
             if value == 1:
+                print("DETECT - GOING RIGHT")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
                 self.motorL.drive(70, -1)
@@ -78,6 +79,7 @@ class MainHandler:
                 value = detectGarbage(picam2)
                 continue
             if value == -1:
+                print("DETECT - GOING LEFT")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
                 self.motorL.drive(70, 1)
@@ -85,6 +87,7 @@ class MainHandler:
                 value = detectGarbage(picam2)
                 continue
             if value == 0:
+                print("DETECT - GOING STRAIGHT")
                 self.motorL.drive(forwardspeed, -1)
                 self.motorR.drive(forwardspeed, -1)
                 return
