@@ -88,5 +88,7 @@ class MainHandler:
                 continue
             if value == 0:
                 print("DETECT - GOING STRAIGHT")
+                self.motorL.drive(forwardspeed, -1)
+                self.motorR.drive(forwardspeed, -1)
                 return
 
