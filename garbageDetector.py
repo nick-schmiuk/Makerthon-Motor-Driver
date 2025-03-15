@@ -52,7 +52,7 @@ def detectGarbage(picam2):
             garbagePoints.append([cx, cy])
 
     if len(garbagePoints):
-        centerPoint = [frame.x / 2,frame.y/2]
+        centerPoint = [frame.width / 2,frame.height/2]
         diff = garbagePoints[0][0] - centerPoint[0]
         if diff > tolerance:
             return -1
