@@ -9,9 +9,10 @@ def detectGarbage(picam2):
 
     lower_limit = (1, 50, 50)
     upper_limit = (40, 255, 255)
-    cv2.flip(picam2, 1)
+    #cv2.flip(picam2, 1)
     frame = picam2.capture_array()
     frame = cv2.resize(frame, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
+    frame = cv2.flip(frame, 1)
 
 
     # Proceso de enmascarado de la imagen
