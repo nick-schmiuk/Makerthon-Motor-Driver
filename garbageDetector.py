@@ -14,6 +14,9 @@ def detectGarbage(picam2):
     frame = cv2.resize(frame, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
     frame = cv2.flip(frame, 1)
 
+    cv2.imshow('C',frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        return 0
 
     # Proceso de enmascarado de la imagen
     blur = cv2.bilateralFilter(frame, 25, 75, 75)
