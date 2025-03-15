@@ -22,7 +22,7 @@ class MainHandler:
             value = detectGarbage(picam2)
             if value != 0:
                 self.collectGarbage(value,picam2,forwardspeed)
-
+    
             self.motorL.drive(forwardspeed, -1)
             self.motorR.drive(forwardspeed, -1)
             if self.distance.getAvoidance(0, 0.7) == True: # Left channel
@@ -74,7 +74,7 @@ class MainHandler:
                 print("DETECT - GOING RIGHT")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
-                self.motorL.drive(60, -1)
+                self.motorL.drive(70, -1)
                 self.motorR.drive(70, 1)
                 value = detectGarbage(picam2)
                 continue
@@ -82,13 +82,11 @@ class MainHandler:
                 print("DETECT - GOING LEFT")
                 self.motorL.drive(0)
                 self.motorR.drive(0)
-                self.motorL.drive(60, 1)
+                self.motorL.drive(70, 1)
                 self.motorR.drive(70, -1)
                 value = detectGarbage(picam2)
                 continue
             if value == 0:
                 print("DETECT - GOING STRAIGHT")
-                self.motorL.drive(forwardspeed, -1)
-                self.motorR.drive(forwardspeed, -1)
                 return
 
