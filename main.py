@@ -17,7 +17,7 @@ picam2.configure(picam2.create_still_configuration(main={"format": "RGB888", "si
 # Iniciar la cámara
 #picam2.start()
 
-picam2.start_preview()
+picam2.start()
 time.sleep(2)
 
 handler = actionHandler.MainHandler(motorL=motorL, motorR=motorR, distance=distance)
