@@ -19,4 +19,4 @@ picam2.start()
 time.sleep(2)
 
 handler = actionHandler.MainHandler(motorL=motorL, motorR=motorR, distance=distance)
-driveAndAvoid(picam2)
+handler.driveAndAvoid(picam2)
