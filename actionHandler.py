@@ -66,8 +66,8 @@ class MainHandler:
 
     def collectGarbage(self,value,picam2,forwardspeed):
 
-        self.motorL.drive(0)
-        self.motorR.drive(0)
+        #self.motorL.drive(0)
+        #self.motorR.drive(0)
 
         while True:
             if value == 1:
