@@ -49,11 +49,11 @@ def detectGarbage(picam2):
             if M["m00"] != 0:
                 cx = int(M["m10"] / M["m00"])  
                 cy = int(M["m01"] / M["m00"])
-            garbagePoints([cx, cy])
+            garbagePoints.append([cx, cy])
 
     if len(garbagePoints):
         centerPoint = [frame.x / 2,frame.y/2]
-        diff = garbagePoints[0] - centerPoint[0]
+        diff = garbagePoints[0][0] - centerPoint[0]
         if diff > tolerance:
             return -1
         elif diff < -tolerance:
