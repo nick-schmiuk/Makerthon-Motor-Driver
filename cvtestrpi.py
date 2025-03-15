@@ -13,7 +13,7 @@ def main():
         frame = picam2.capture_array()
 
         # Convert the frame to the HSV color space
-        hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        hsv_frame = cv2.cvtColor(frame, cv2.COLOR_RGB2HSV)
 
         # Define the lower and upper bounds for the color (e.g., red)
         lower_red1 = np.array([0, 120, 70], dtype=np.uint8)
