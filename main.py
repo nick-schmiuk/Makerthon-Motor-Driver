@@ -12,7 +12,7 @@ distance = distanceHandler.Distance()
 
 # Inicializar la cámara
 picam2 = Picamera2()
-picam2.configure(picam2.create_still_configuration(main={"format": "RGB888", "size": (640, 480)}))
+picam2.configure(picam2.create_still_configuration(main={"format": "RGB888", "size": (1280, 720)}))
 
 # Iniciar la cámara
 #picam2.start()
